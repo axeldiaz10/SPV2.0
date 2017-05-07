@@ -5,10 +5,27 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Axel y Ampy
  */
 public class GrupoFamiliar {
+    private ArrayList conjPariente = new ArrayList<Pariente>();
+
+    public GrupoFamiliar() {
+    }
+
+    public ArrayList getConjPariente() {
+        return conjPariente;
+    }
+
+    public void setConjPariente(ArrayList conjPariente) {
+        this.conjPariente = conjPariente;
+    }
     
+    public void agregar (Pariente p){
+        conjPariente.add(p);
+    }
 }

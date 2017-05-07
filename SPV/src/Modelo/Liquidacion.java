@@ -15,7 +15,7 @@ import java.util.Date;
 public class Liquidacion {
     private double sueldoNeto;
     private Date fecha;
-    private ArrayList conjConcepto = new ArrayList<Concepto>();
+    private ArrayList conjLineaLiquidacion = new ArrayList<LineaLiquidacion>();
 
     public Liquidacion() {
     }
@@ -41,21 +41,21 @@ public class Liquidacion {
         this.fecha = fecha;
     }
 
-    public ArrayList getConjConcepto() {
-        return conjConcepto;
+    public ArrayList getConjLineaLiquidacion() {
+        return conjLineaLiquidacion;
     }
 
-    public void setConjConcepto(ArrayList conjConcepto) {
-        this.conjConcepto = conjConcepto;
+    public void setConjLineaLiquidacion(ArrayList conjLineaLiquidacion) {
+        this.conjLineaLiquidacion = conjLineaLiquidacion;
     }
 
     @Override
     public String toString() {
-        return "Liquidacion{" + "sueldoNeto=" + sueldoNeto + ", fecha=" + fecha + ", conjConcepto=" + conjConcepto + '}';
+        return "Liquidacion{" + "sueldoNeto=" + sueldoNeto + ", fecha=" + fecha + ", conjLineaLiquidacion=" + conjLineaLiquidacion + '}';
     }
-    
-    public void agregar (Concepto c){
-        conjConcepto.add(c);
+   
+    public void agregar (LineaLiquidacion ll){
+        conjLineaLiquidacion.add(ll);
     }
     
 }

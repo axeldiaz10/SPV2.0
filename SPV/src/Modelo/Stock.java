@@ -10,5 +10,9 @@ package Modelo;
  * @author Axel y Ampy
  */
 public class Stock {
+    private int actual;
+    private int minimo;
+    private int maximo;
+    private int cantidadReponer;
     
 }

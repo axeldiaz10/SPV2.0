@@ -10,5 +10,9 @@ package Modelo;
  * @author Axel y Ampy
  */
 public class Proveedor {
+    private String razonSocial;
+    private String cuit;
+    private Domicilio domicilio;
+    
     
 }
