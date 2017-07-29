@@ -14,14 +14,14 @@ public class Domicilio {
     private int numero;
     private int piso;
     private int departamento;
-    private Ciudad ciudad;
+    private Localidad localidad;
 
-    public Domicilio(String calle, int numero, int piso, int departamento, Ciudad ciudad) {
+    public Domicilio(String calle, int numero, int piso, int departamento, Localidad localidad) {
         this.calle = calle;
         this.numero = numero;
         this.piso = piso;
         this.departamento = departamento;
-        this.ciudad = ciudad;
+        this.localidad = localidad;
     }
 
     public Domicilio() {
@@ -59,17 +59,17 @@ public class Domicilio {
         this.departamento = departamento;
     }
 
-    public Ciudad getCiudad() {
-        return ciudad;
+    public Localidad getLocalidad() {
+        return localidad;
     }
 
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
+    public void setLocalidad(Localidad localidad) {
+        this.localidad = localidad;
     }
 
     @Override
     public String toString() {
-        return "Domicilio{" + "calle=" + calle + ", numero=" + numero + ", piso=" + piso + ", departamento=" + departamento + ", ciudad=" + ciudad + '}';
+        return "Domicilio{" + "calle=" + calle + ", numero=" + numero + ", piso=" + piso + ", departamento=" + departamento + ", ciudad=" + localidad + '}';
     }
     
 }

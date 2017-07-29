@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -12,6 +13,7 @@ import java.util.Date;
  * @author Axel y Ampy
  */
 public class Venta {
+    private ArrayList<LineaVenta> conjLineaVenta = new ArrayList<>();
     private double montoTotal;
     private Date fecha;
     private Cliente cliente;
@@ -24,6 +26,16 @@ public class Venta {
         this.fecha = fecha;
         this.cliente = cliente;
     }
+
+    public ArrayList<LineaVenta> getConjLineaVenta() {
+        return conjLineaVenta;
+    }
+
+    public void setConjLineaVenta(ArrayList<LineaVenta> conjLineaVenta) {
+        this.conjLineaVenta = conjLineaVenta;
+    }
+
+    
 
     public double getMontoTotal() {
         return montoTotal;
@@ -51,8 +63,13 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" + "montoTotal=" + montoTotal + ", fecha=" + fecha + ", cliente=" + cliente + '}';
+        return "Venta{" + "conjLineaVenta=" + conjLineaVenta + ", montoTotal=" + montoTotal + ", fecha=" + fecha + ", cliente=" + cliente + '}';
     }
+
+    public void agregar(LineaVenta lv){
+        conjLineaVenta.add(lv);
+    }
+    
     
     
 }

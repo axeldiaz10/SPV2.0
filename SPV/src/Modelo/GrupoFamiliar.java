@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Axel y Ampy
  */
 public class GrupoFamiliar {
-    private ArrayList conjPariente = new ArrayList<Pariente>();
+    private ArrayList<Pariente> conjPariente = new ArrayList<>();
 
     public GrupoFamiliar() {
     }

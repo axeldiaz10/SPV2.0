@@ -9,11 +9,11 @@ package Modelo;
  *
  * @author Axel y Ampy
  */
-public class Ciudad {
+public class Localidad {
     private String nombre;
     private int codigoPostal;
      
-    public Ciudad() {
+    public Localidad() {
     }
 
     public String getNombre() {
