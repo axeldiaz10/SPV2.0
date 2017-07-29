@@ -15,7 +15,7 @@ import java.util.Date;
 public class Liquidacion {
     private double sueldoNeto;
     private Date fecha;
-    private ArrayList conjLineaLiquidacion = new ArrayList<LineaLiquidacion>();
+    private ArrayList<LineaLiquidacion> conjLineaLiquidacion = new ArrayList<>();
 
     public Liquidacion() {
     }
@@ -25,6 +25,8 @@ public class Liquidacion {
         this.fecha = fecha;
     }
 
+      
+    
     public double getSueldoNeto() {
         return sueldoNeto;
     }

@@ -16,6 +16,11 @@ public class Localidad {
     public Localidad() {
     }
 
+    public Localidad(String nombre, int codigoPostal) {
+        this.nombre = nombre;
+        this.codigoPostal = codigoPostal;
+    }
+
     public String getNombre() {
         return nombre;
     }
