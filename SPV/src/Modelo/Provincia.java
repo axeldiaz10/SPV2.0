@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Provincia {
     private String nombre;
-    private ArrayList conjCiudad = new ArrayList<Ciudad>();
+    private ArrayList<Localidad> conjCiudad = new ArrayList<>();
 
     public Provincia() {
     }
@@ -36,7 +36,7 @@ public class Provincia {
         return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public void agregar (Ciudad c){
+    public void agregar (Localidad c){
         conjCiudad.add(c);
     }
 }

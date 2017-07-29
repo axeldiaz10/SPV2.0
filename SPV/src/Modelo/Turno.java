@@ -14,14 +14,26 @@ import java.util.Date;
 public class Turno {
     private Date horaEntrada;
     private Date horaSalida;
-
+    private String nombre;
+    
     public Turno() {
     }
 
-    public Turno(Date horaEntrada, Date horaSalida) {
+    public Turno(Date horaEntrada, Date horaSalida, String nombre) {
         this.horaEntrada = horaEntrada;
         this.horaSalida = horaSalida;
+        this.nombre = nombre;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    
 
     public Date getHoraEntrada() {
         return horaEntrada;
@@ -41,7 +53,9 @@ public class Turno {
 
     @Override
     public String toString() {
-        return "Turno{" + "horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + '}';
+        return "Turno{" + "horaEntrada=" + horaEntrada + ", horaSalida=" + horaSalida + ", nombre=" + nombre + '}';
     }
+
+    
     
 }

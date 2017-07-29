@@ -22,11 +22,12 @@ public class Empleado {
     private Domicilio domicilio;
     private Usuario usuario;
     private Liquidacion liquidacion;
+    private Turno turno;
 
     public Empleado() {
     }
 
-    public Empleado(int legajo, String nombre, String apellido, String correo, int dni, Date fechaIngreso, Date fechaNacimiento, Domicilio domicilio, Usuario usuario, Liquidacion liquidacion) {
+    public Empleado(int legajo, String nombre, String apellido, String correo, int dni, Date fechaIngreso, Date fechaNacimiento, Domicilio domicilio, Usuario usuario, Liquidacion liquidacion, Turno turno) {
         this.legajo = legajo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -37,7 +38,18 @@ public class Empleado {
         this.domicilio = domicilio;
         this.usuario = usuario;
         this.liquidacion = liquidacion;
+        this.turno = turno;
     }
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
+
+   
 
     public int getLegajo() {
         return legajo;
@@ -121,8 +133,10 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", dni=" + dni + ", fechaIngreso=" + fechaIngreso + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + ", usuario=" + usuario + ", liquidacion=" + liquidacion + '}';
+        return "Empleado{" + "legajo=" + legajo + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", dni=" + dni + ", fechaIngreso=" + fechaIngreso + ", fechaNacimiento=" + fechaNacimiento + ", domicilio=" + domicilio + ", usuario=" + usuario + ", liquidacion=" + liquidacion + ", turno=" + turno + '}';
     }
+
+    
     
     
 }

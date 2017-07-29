@@ -13,16 +13,16 @@ public class Pariente {
     private int dni;
     private String nombre;
     private String apellido;
-    private Parentezco parentezco;
+    
 
     public Pariente() {
     }
 
-    public Pariente(int dni, String nombre, String apellido, Parentezco parentezco) {
+    public Pariente(int dni, String nombre, String apellido) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.parentezco = parentezco;
+        
     }
 
     public int getDni() {
@@ -49,18 +49,13 @@ public class Pariente {
         this.apellido = apellido;
     }
 
-    public Parentezco getParentezco() {
-        return parentezco;
-    }
-
-    public void setParentezco(Parentezco parentezco) {
-        this.parentezco = parentezco;
-    }
-
     @Override
     public String toString() {
-        return "Pariente{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", parentezco=" + parentezco + '}';
+        return "Pariente{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + '}';
     }
+
+    
+
     
     
 }
