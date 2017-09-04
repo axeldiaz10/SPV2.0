@@ -8,11 +8,13 @@ package Controlador;
 import Modelo.Empresa;
 import Modelo.Persistencia;
 import Vista.ABMCliente;
+import Vista.ABMConcepto;
 import Vista.HistorialVenta;
 import Vista.Login;
 import Vista.MenuPrincipal;
 import Vista.NuevaVenta;
 import Vista.NuevoCliente;
+import Vista.NuevoConcepto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -31,6 +33,8 @@ public class Controlador implements ActionListener, KeyListener{
     private HistorialVenta historialVenta;
     private ABMCliente abmCliente;
     private NuevoCliente nuevoCliente;
+    private ABMConcepto abmConcepto;
+    private NuevoConcepto nuevoConcepto;
     public Empresa empresa;
     public Persistencia persistencia;
     
@@ -93,6 +97,17 @@ public class Controlador implements ActionListener, KeyListener{
             persistencia.crearCliente(nuevoCliente.getNombre(),nuevoCliente.getApellido(),nuevoCliente.getCorreo(),nuevoCliente.getTipo()); //Persistir Cliente
         }
         
+        //ABM CONCEPTO
+        if (e.getActionCommand().equals(MenuPrincipal.ABMCONCEPTO)) {
+            IniciarABMConcepto(login.getUsuario());
+            abmConcepto.cargarTabla(empresa.conjConceptos);
+        }
+        
+        if (e.getActionCommand().equals(ABMConcepto.NUEVO)) {
+            IniciarNuevoConcepto(login.getUsuario());
+            
+        }
+        
         
     }
     
@@ -106,6 +121,16 @@ public class Controlador implements ActionListener, KeyListener{
         if (abmCliente.getChkPorNombre().isSelected()) {
             abmCliente.trs.setRowFilter(RowFilter.regexFilter("(?i)"+abmCliente.getBuscar(), 2));
             abmCliente.filtrarTabla();
+            System.out.println("Entra por aqui");
+        }
+        
+        if (abmConcepto.getChkPorTipo().isSelected()) {
+            abmConcepto.trs.setRowFilter(RowFilter.regexFilter("(?i)"+abmConcepto.getBuscar(), 5));
+            abmConcepto.filtrarTabla();
+        }
+        if (abmConcepto.getChkPorDescripcion().isSelected()) {
+            abmConcepto.trs.setRowFilter(RowFilter.regexFilter("(?i)"+abmConcepto.getBuscar(), 1));
+            abmConcepto.filtrarTabla();
             System.out.println("Entra por aqui");
         }
     }
@@ -130,6 +155,8 @@ public class Controlador implements ActionListener, KeyListener{
         historialVenta = new HistorialVenta(this);
         abmCliente = new ABMCliente(this);
         nuevoCliente = new NuevoCliente(this);
+        abmConcepto = new ABMConcepto(this);
+        nuevoConcepto = new NuevoConcepto(this);
         
     }
     
@@ -169,6 +196,17 @@ public class Controlador implements ActionListener, KeyListener{
     private void IniciarNuevoCliente(String u){
         nuevoCliente.setVisible(true);
         nuevoCliente.setUsuario(u);
+        System.out.println("ENTRANDO X ACA");
+    }
+
+    private void IniciarABMConcepto(String u) {
+        abmConcepto.setVisible(true);
+        abmConcepto.setUsuario(u);
+    }
+
+    private void IniciarNuevoConcepto(String u) {
+        nuevoConcepto.setVisible(true);
+        
     }
 
  

@@ -10,7 +10,7 @@ package Modelo;
  * @author Axel y Ampy
  */
 public class LineaLiquidacion {
-     private double importe;
+     
      private int unidad;
      private double porcentaje;
      private Concepto concepto;
@@ -18,8 +18,8 @@ public class LineaLiquidacion {
     public LineaLiquidacion() {
     }
 
-    public LineaLiquidacion(double importe, int unidad, double porcentaje, Concepto concepto) {
-        this.importe = importe;
+    public LineaLiquidacion( int unidad, double porcentaje, Concepto concepto) {
+        
         this.unidad = unidad;
         this.porcentaje = porcentaje;
         this.concepto = concepto;
@@ -29,13 +29,7 @@ public class LineaLiquidacion {
         return unidad;
     }
 
-    public double getImporte() {
-        return importe;
-    }
-
-    public void setImporte(double importe) {
-        this.importe = importe;
-    }
+    
 
     public void setUnidad(int unidad) {
         this.unidad = unidad;
@@ -59,7 +53,7 @@ public class LineaLiquidacion {
 
     @Override
     public String toString() {
-        return "LineaLiquidacion{" + "importe=" + importe + ", unidad=" + unidad + ", porcentaje=" + porcentaje + ", concepto=" + concepto + '}';
+        return "LineaLiquidacion{"  +  ", unidad=" + unidad + ", porcentaje=" + porcentaje + ", concepto=" + concepto + '}';
     }
 
     

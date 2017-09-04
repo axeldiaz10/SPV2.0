@@ -12,17 +12,58 @@ package Modelo;
 public class Concepto {
     private int codigo;
     private String descripcion;
-    
+    private double importe;
+    private int unidad;
+    private double porcentaje;
     private String tipo;
+    private String estado;
 
     public Concepto() {
     }
 
-    public Concepto(int codigo, String descripcion, String tipo) {
+    public Concepto(int codigo, String descripcion, double importe, int unidad, double porcentaje, String tipo, String estado) {
         this.codigo = codigo;
         this.descripcion = descripcion;
-        
+        this.importe = importe;
+        this.unidad = unidad;
+        this.porcentaje = porcentaje;
         this.tipo = tipo;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    
+    
+    public int getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(int unidad) {
+        this.unidad = unidad;
+    }
+
+    public double getPorcentaje() {
+        return porcentaje;
+    }
+
+    public void setPorcentaje(double porcentaje) {
+        this.porcentaje = porcentaje;
+    }
+
+        
+    public double getImporte() {
+        return importe;
+    }
+
+    public void setImporte(double importe) {
+        this.importe = importe;
     }
 
     public int getCodigo() {
@@ -53,9 +94,11 @@ public class Concepto {
 
     @Override
     public String toString() {
-        return "Concepto{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", tipo=" + tipo + '}';
+        return "Concepto{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", importe=" + importe + ", unidad=" + unidad + ", porcentaje=" + porcentaje + ", tipo=" + tipo + ", estado=" + estado + '}';
     }
+
     
+
     
     
             

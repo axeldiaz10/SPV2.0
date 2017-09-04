@@ -49,9 +49,11 @@ public class SPV {
         Articulo a2 = new Articulo(2, "lays", 15.00, s1, p1);
         Articulo a3 = new Articulo(3, "pasta", 40.00, s1, p1);
         
-        Concepto c1 = new Concepto(111, "sueldo basico", 1500.00, "haber");
-        Concepto c2 = new Concepto(112, "bonus", 500.00, "haber");
-        Concepto c3 = new Concepto(113, "obra social", 300.00, "debe");
+        Concepto c1 = new Concepto(111, "sueldo basico", 6000, 1, 0, "haber", "Habilitado");
+        Concepto c2 = new Concepto(112, "presentismo", 500.00, 1, 0, "haber", "Habilitado");
+        Concepto c3 = new Concepto(113, "obra social", 300.00, 0, 0.03,  "debe", "Habilitado");
+        
+        
         
         LineaLiquidacion ll1 = new LineaLiquidacion(1, 100.00, c1);
         LineaLiquidacion ll2 = new LineaLiquidacion(1, 100.00, c2);
@@ -61,6 +63,8 @@ public class SPV {
         l1.agregar(ll1);
         l1.agregar(ll2);
         l1.agregar(ll3);
+        
+        
         
         Turno t1 = new Turno();
         
@@ -76,6 +80,8 @@ public class SPV {
         Controlador clogin = new Controlador();
         
         clogin.empresa.agregarCliente(cl4);
+        
+        
         clogin.empresa.agregarCliente(cl3);
         clogin.empresa.agregarCliente(cl2);
         clogin.empresa.agregarCliente(cl1);
@@ -84,6 +90,11 @@ public class SPV {
         clogin.empresa.agregarArticulo(a1);
         clogin.empresa.agregarArticulo(a2);
         clogin.empresa.agregarArticulo(a3);
+        
+        clogin.empresa.agregarConcepto(c1);
+        clogin.empresa.agregarConcepto(c2);
+        clogin.empresa.agregarConcepto(c3);
+        
         clogin.Iniciar();
         
     }

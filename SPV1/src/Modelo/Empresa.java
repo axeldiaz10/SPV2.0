@@ -15,6 +15,7 @@ public class Empresa {
     public ArrayList <Empleado> conjEmpleados = new ArrayList<>();
     public ArrayList <Articulo> conjArticulos = new ArrayList<>();
     public ArrayList <Cliente> conjClientes = new ArrayList<>();
+    public ArrayList <Concepto> conjConceptos = new ArrayList<>();
     public Terminal terminal;
     public Persistencia persistencia;
 
@@ -47,6 +48,23 @@ public class Empresa {
         this.conjArticulos = conjArticulos;
     }
 
+    public ArrayList<Concepto> getConjConceptos() {
+        return conjConceptos;
+    }
+
+    public void setConjConceptos(ArrayList<Concepto> conjConceptos) {
+        this.conjConceptos = conjConceptos;
+    }
+
+    public Persistencia getPersistencia() {
+        return persistencia;
+    }
+
+    public void setPersistencia(Persistencia persistencia) {
+        this.persistencia = persistencia;
+    }
+    
+    
     public Terminal getTerminal() {
         return terminal;
     }
@@ -69,6 +87,14 @@ public class Empresa {
         conjClientes.add(c);
     }
     
+    public void agregarConcepto (Concepto co){
+        conjConceptos.add(co);
+    }
+    
+     public void agregarArticulo(Articulo a) {
+        conjArticulos.add(a);
+    }
+    
    public boolean validarUsuario (String u, String c){
        boolean b=false;
        for (Empleado e : conjEmpleados) {
@@ -80,9 +106,7 @@ public class Empresa {
        return b;
    }
 
-    public void agregarArticulo(Articulo a) {
-        conjArticulos.add(a);
-    }
+   
     
     public Articulo buscarArticulo (int codigo){
         

@@ -6,6 +6,13 @@
 package Vista;
 
 import Controlador.Controlador;
+import Modelo.Concepto;
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -15,12 +22,76 @@ public class ABMConcepto extends javax.swing.JFrame {
     public static final String NUEVO = "Nuevo";
     public static final String MODIFICAR = "Modificar";
     
+    DefaultTableModel modelo;
+    public TableRowSorter trs;
     
     public ABMConcepto(Controlador control) {
-       btnNuevo.addActionListener(control);
+       initComponents();
        btnNuevo.setActionCommand(NUEVO);
-       btnModificar.addActionListener(control);
-       btnModificar.setActionCommand(MODIFICAR);
+       btnNuevo.addActionListener(control);
+       txtBuscar.addKeyListener((KeyListener) control);
+       
+       String cabecera []={"Codigo","Descripcion","Importe","Unidad","Porcentaje","Tipo","Estado"};
+        String datos [][]={};
+        modelo = new DefaultTableModel(datos, cabecera);
+        trs = new TableRowSorter(modelo);
+        tblConceptos.setModel(modelo);
+        
+    }
+    
+    public JRadioButton getChkPorTipo() {
+        return chkPorTipo;
+    }
+
+    public void setChkPorTipo(JRadioButton chkPorCodigo) {
+        this.chkPorTipo = chkPorCodigo;
+    }
+
+    public JRadioButton getChkPorDescripcion() {
+        return chkPorDescripcion;
+    }
+
+    public void setChkPorDescripcion(JRadioButton chkPorNombre) {
+        this.chkPorDescripcion = chkPorNombre;
+    }
+    
+    
+
+    public String getBuscar (){
+        return txtBuscar.getText();
+    }
+    
+    public void setBuscar (String t){
+        txtBuscar.setText(t);
+    }
+        
+    public void setUsuario (String u){
+        txtUsuario.setText(u);
+    }
+    
+    public void setTablaConceptos(String cod, String d, String i, String u, String p, String t, String e){
+        Object datos [] = {cod,d,i,u,p,t,e};
+        modelo.addRow(datos);
+    }
+
+    public JTable getTblConceptos() {
+        return tblConceptos;
+    }
+    
+    
+    
+    public void cargarTabla(ArrayList<Concepto> conjConceptos) {
+        
+        for (Concepto co : conjConceptos) {
+            co.toString();
+            this.setTablaConceptos(String.valueOf(co.getCodigo()),co.getDescripcion(),String.valueOf(co.getImporte()),String.valueOf(co.getUnidad()),String.valueOf(co.getPorcentaje()),
+                                   co.getTipo(),co.getEstado());
+            
+        }
+    }
+    
+     public void filtrarTabla() {
+      tblConceptos.setRowSorter(trs);
     }
 
     
@@ -37,8 +108,8 @@ public class ABMConcepto extends javax.swing.JFrame {
         txtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblConceptos = new javax.swing.JTable();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        chkPorTipo = new javax.swing.JRadioButton();
+        chkPorDescripcion = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
@@ -71,11 +142,11 @@ public class ABMConcepto extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblConceptos);
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Por Codigo");
+        buttonGroup1.add(chkPorTipo);
+        chkPorTipo.setText("Por Tipo");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Por Nombre");
+        buttonGroup1.add(chkPorDescripcion);
+        chkPorDescripcion.setText("Por Descripcion");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -84,16 +155,15 @@ public class ABMConcepto extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkPorDescripcion)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(chkPorTipo)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -103,8 +173,8 @@ public class ABMConcepto extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(chkPorTipo)
+                    .addComponent(chkPorDescripcion))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
@@ -190,12 +260,12 @@ public class ABMConcepto extends javax.swing.JFrame {
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JRadioButton chkPorDescripcion;
+    private javax.swing.JRadioButton chkPorTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblConceptos;
     private javax.swing.JTextField txtBuscar;

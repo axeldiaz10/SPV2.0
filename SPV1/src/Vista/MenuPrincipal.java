@@ -15,6 +15,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public static final String NUEVAVENTA = "Nueva Venta";
     public static final String HISTORIALVENTA = "Historial de Venta";
     public static final String ABMCLIENTE = "Cliente";
+    public static final String ABMCONCEPTO = "Concepto";
  
     public MenuPrincipal(Controlador control) {
         initComponents();
@@ -24,6 +25,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnHistorialventa.setActionCommand(HISTORIALVENTA);
         btnABMCliente.addActionListener(control);
         btnABMCliente.setActionCommand(ABMCLIENTE);
+        btnABMConcepto.addActionListener(control);
+        btnABMConcepto.setActionCommand(ABMCONCEPTO);
                  
     }
 
@@ -49,6 +52,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btnABMCliente = new javax.swing.JButton();
+        btnABMConcepto = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -185,6 +189,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnABMConcepto.setText("Concepto");
+        btnABMConcepto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnABMConceptoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -192,9 +203,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(btnABMCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(232, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btnABMCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(btnABMConcepto, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +218,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(btnABMCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnABMCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnABMConcepto, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(157, Short.MAX_VALUE))
         );
 
@@ -271,6 +289,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnABMClienteActionPerformed
 
+    private void btnABMConceptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnABMConceptoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnABMConceptoActionPerformed
+
     
     public static void main(String args[]) {
        
@@ -278,6 +300,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnABMCliente;
+    private javax.swing.JButton btnABMConcepto;
     private javax.swing.JButton btnHistorialventa;
     private javax.swing.JButton btnNuevaVenta;
     private javax.swing.JLabel jLabel1;
