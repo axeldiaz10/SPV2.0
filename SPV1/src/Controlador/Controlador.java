@@ -73,7 +73,7 @@ public class Controlador implements ActionListener, KeyListener{
         if (e.getActionCommand().equals(nuevaVenta.REGISTRARPAGO)) {
         //CalcularVuelto
         nuevaVenta.setVuelto(String.valueOf(empresa.calcularVuelto(Double.parseDouble(nuevaVenta.getDineroRecibido()))));
-        persistencia.crearVenta(empresa.obtenerVentaActual());  //Persistir Venta
+        persistencia.insertarVenta(empresa.obtenerVentaActual());  //Persistir Venta
         persistencia.actualizarStock(empresa.obtenerVentaActual()); //Actulizar Stock
         // vaciar Venta
         }
@@ -90,11 +90,13 @@ public class Controlador implements ActionListener, KeyListener{
         }
         
         if (e.getActionCommand().equals(ABMCliente.NUEVO)){
-            IniciarNuevoCliente(login.getUsuario());
+            if (abmCliente.isActive()) {
+                IniciarNuevoCliente(login.getUsuario());
+            }
         }
         
         if (e.getActionCommand().equals(NuevoCliente.CREAR)){
-            persistencia.crearCliente(nuevoCliente.getNombre(),nuevoCliente.getApellido(),nuevoCliente.getCorreo(),nuevoCliente.getTipo()); //Persistir Cliente
+            persistencia.insertarCliente(nuevoCliente.getNombre(),nuevoCliente.getApellido(),nuevoCliente.getCorreo(),nuevoCliente.getTipo()); //Persistir Cliente
         }
         
         //ABM CONCEPTO
@@ -104,8 +106,13 @@ public class Controlador implements ActionListener, KeyListener{
         }
         
         if (e.getActionCommand().equals(ABMConcepto.NUEVO)) {
-            IniciarNuevoConcepto(login.getUsuario());
-            
+            if (abmConcepto.isActive()) {
+                IniciarNuevoConcepto(login.getUsuario()); 
+            }
+        }
+        
+        if (e.getActionCommand().equals(NuevoConcepto.CREAR)){
+            persistencia.InsertarConcepto(nuevoConcepto.getDescripcion(),nuevoConcepto.getImporte(),nuevoConcepto.getUnidad(),nuevoConcepto.getPorcentaje(),nuevoConcepto.getTipo(),nuevoConcepto.getEstado());//Persistir Concepto
         }
         
         

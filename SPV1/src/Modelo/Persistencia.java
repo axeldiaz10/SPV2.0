@@ -11,16 +11,22 @@ package Modelo;
  */
 public class Persistencia {
 
-    public void crearCliente(String nombre, String apellido, String correo, String tipo) {
+    public void insertarCliente(String nombre, String apellido, String correo, String tipo) {
         
     }
 
-    public void crearVenta(Venta venta) {
+    public void insertarVenta(Venta venta) {
         
     }
 
     public void actualizarStock(Venta obtenerVentaActual) {
         
     }
+
+    public void InsertarConcepto(String descripcion, String importe, String unidad, String porcentaje, String tipo, String estado) {
+        
+    }
+
+   
     
 }
