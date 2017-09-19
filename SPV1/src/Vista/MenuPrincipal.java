@@ -47,6 +47,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnNuevaVenta = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        btnLiquidacionIndividual = new javax.swing.JButton();
+        btnLiquidacionGrupal = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -133,12 +135,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHistorialventa, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setText("Liquidacion");
+
+        btnLiquidacionIndividual.setText("Individual");
+        btnLiquidacionIndividual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLiquidacionIndividualActionPerformed(evt);
+            }
+        });
+
+        btnLiquidacionGrupal.setText("Grupal");
+        btnLiquidacionGrupal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLiquidacionGrupalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -146,14 +162,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnLiquidacionIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLiquidacionGrupal, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLiquidacionIndividual, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLiquidacionGrupal, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -293,6 +320,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnABMConceptoActionPerformed
 
+    private void btnLiquidacionIndividualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiquidacionIndividualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLiquidacionIndividualActionPerformed
+
+    private void btnLiquidacionGrupalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLiquidacionGrupalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLiquidacionGrupalActionPerformed
+
     
     public static void main(String args[]) {
        
@@ -302,6 +337,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnABMCliente;
     private javax.swing.JButton btnABMConcepto;
     private javax.swing.JButton btnHistorialventa;
+    private javax.swing.JButton btnLiquidacionGrupal;
+    private javax.swing.JButton btnLiquidacionIndividual;
     private javax.swing.JButton btnNuevaVenta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

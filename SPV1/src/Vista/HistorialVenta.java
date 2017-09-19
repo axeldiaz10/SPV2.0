@@ -13,9 +13,7 @@ import Controlador.Controlador;
  */
 public class HistorialVenta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form HistorialVenta
-     */
+   
     public HistorialVenta(Controlador control) {
         initComponents();
     }
@@ -81,11 +79,6 @@ public class HistorialVenta extends javax.swing.JFrame {
         jTextField1.setName("txtMontoDesde"); // NOI18N
 
         jTextField2.setName("txtMontoHasta"); // NOI18N
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
 
         jLabel7.setText("Nro de Factura:");
 
@@ -232,11 +225,6 @@ public class HistorialVenta extends javax.swing.JFrame {
         jTextField6.setName("txtLegajo"); // NOI18N
 
         txtUsuario.setName("txtNombreEmpleado"); // NOI18N
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -297,14 +285,6 @@ public class HistorialVenta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
